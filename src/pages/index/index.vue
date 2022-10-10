@@ -17,8 +17,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useCounterStore } from '@/stores/counter';
+import { useApiStore } from '@/stores/api';
+
 import { version } from "~/package.json"
 const counter = useCounterStore();
+const api = useApiStore();
 const title = ref('Hello')
 
 console.log(`version = '${version}'`)
@@ -26,6 +29,7 @@ console.log(`import.meta.env`, import.meta.env)
 
 const onClick = () => {
   counter.increment();
+  api.login();
 }
 
 const show = ref(false);
