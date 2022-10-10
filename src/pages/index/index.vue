@@ -5,6 +5,12 @@
       <text class=" text-36rpx text-hex-8f8f94">{{ title }}</text>
     </view>
     <button @click="onClick">{{counter.count}}</button>
+    <van-cell is-link @click="showPopup">展示弹出层</van-cell>
+    <van-popup v-model:show="show" @click-overlay="onClickOverlay" >
+      <view class="w-300rpx h-300rpx bg-white flex items-center justify-center">
+        <view>内容</view>
+      </view>
+    </van-popup>
   </view>
 </template>
 
@@ -20,6 +26,15 @@ console.log(`version = '${version}'`)
 const onClick = () => {
   counter.increment();
 }
+
+const show = ref(false);
+
+const onClickOverlay = (e: any) => {
+  show.value = false;
+}
+const showPopup = () => {
+  show.value = true;
+};
 
 </script>
 

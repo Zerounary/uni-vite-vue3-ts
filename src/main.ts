@@ -4,6 +4,7 @@ import * as Pinia from 'pinia';
 import piniaPersist from '@/plugins/pinia-plugin-persist'
 
 import 'virtual:windi.css'
+import './main.css'
 
 export function createApp() {
   const app = createSSRApp(App);
