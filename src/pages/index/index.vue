@@ -11,8 +11,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useCounterStore } from '@/stores/counter';
+import { version } from "~/package.json"
 const counter = useCounterStore();
 const title = ref('Hello')
+
+console.log(`version = '${version}'`)
 
 const onClick = () => {
   counter.increment();
