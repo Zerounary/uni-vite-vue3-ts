@@ -6,8 +6,10 @@
 				"navigationBarTitleText": "uni-app",
 				"disableScroll": false,
 				"usingComponents": {
+          // #ifdef MP-WEIXIN
 					"van-cell": "/wxcomponents/vant/cell/index",
 					"van-popup": "/wxcomponents/vant/popup/index"
+          // #endif
 				}
 			}
 		}
@@ -18,6 +20,7 @@
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8",
 		"usingComponents": {
+      // #ifdef MP-WEIXIN
       "van-action-sheet": "/wxcomponents/vant/action-sheet/index",
       "van-area": "/wxcomponents/vant/area/index",
       "van-button": "/wxcomponents/vant/button/index",
@@ -84,6 +87,7 @@
       "van-transition": "/wxcomponents/vant/transition/index",
       "van-tree-select": "/wxcomponents/vant/tree-select/index",
       "van-uploader": "/wxcomponents/vant/uploader/index"
+      // #endif
     }
 	}
 }
