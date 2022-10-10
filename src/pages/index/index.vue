@@ -22,6 +22,7 @@ const counter = useCounterStore();
 const title = ref('Hello')
 
 console.log(`version = '${version}'`)
+console.log(`import.meta.env`, import.meta.env)
 
 const onClick = () => {
   counter.increment();
