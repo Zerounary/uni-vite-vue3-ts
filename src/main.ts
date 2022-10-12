@@ -11,11 +11,14 @@ import 'vant/lib/index.css'
 import 'virtual:windi.css'
 import './main.css'
 
+import mixin from '@/mixin'
+
 export function createApp() {
   const app = createSSRApp(App);
 	const pinia = Pinia.createPinia();
 	pinia.use(piniaPersist)
 	app.use(pinia);
+	app.mixin(mixin);
 	// #ifdef H5 || APP-PLUS
 	app.use(Popup)
 	app.use(Cell)
