@@ -99,23 +99,21 @@ const REQ = async (
         method,
         data,
         header: headerToken,
+        success: (res) => {
+          resError(res)
+            .then(resFn)
+            .then(resolve)
+            .catch(reject);
+        },
+        fail:function(err){
+          reject(err);
+        },
+        complete: () => {
+          isShowLoading && hideLoading();
+          const i = pendingList.findIndex((v) => v === reqDataJSON);
+          i >= 0 && pendingList.splice(i, 1);
+        }
       })
-      .then(([err, res]) => {
-        reqError(err, res)
-          .then(resError)
-          .then(resFn)
-          .then(resolve)
-          .catch(reject);
-      })
-      .catch((err: any) => {
-        reject(err);
-      })
-      .finally(() => {
-        // console.log('请求结束，关闭转圈')
-        isShowLoading && hideLoading();
-        const i = pendingList.findIndex((v) => v === reqDataJSON);
-        i >= 0 && pendingList.splice(i, 1);
-      });
   });
 };
 // }
