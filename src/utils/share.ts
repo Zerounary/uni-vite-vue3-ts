@@ -41,7 +41,7 @@ export const shareMixinRoot = {
    * 转发给朋友按钮事件
    * @returns null
    */
-  onShareAppMessage () {
+  onShareAppMessage() {
     const pages = getCurrentPages()
     let currentPath = pages.pop()?.route || ''
     const data = getShareData(currentPath)
@@ -55,7 +55,7 @@ export const shareMixinRoot = {
    * 分享到朋友圈按钮事件
    * @returns null
    */
-  onShareTimeline () {
+  onShareTimeline() {
     const pages = getCurrentPages()
     let currentPath = pages.pop()?.route || ''
     const data = getShareData(currentPath)
@@ -72,7 +72,7 @@ export const shareMixinMethods = {
    * 为当前页面设置分享数据，不追加每次全量更新
    * @param {any} data 当前页面分享的数据
    */
-  _setShareData (data: any) {
+  _setShareData(data: any) {
     const pages = getCurrentPages()
     const currentPath = pages.pop()?.route || ''
     let shareMap = getShareMap()
@@ -85,7 +85,7 @@ export const shareMixinMethods = {
   /**
    * 页面加载时，检查分享跳转
    */
-  _checkShare () {
+  _checkShare() {
     const { query } = uni.getLaunchOptionsSync()
     if (query.ch) {
       if (query.ch === 'pyq') {
