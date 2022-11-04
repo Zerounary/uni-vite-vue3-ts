@@ -21,9 +21,9 @@ export const getShareMap = () => {
 export const getShareData = (path: string) => {
   const shareMap = getShareMap()
   let data = shareMap[path]
-  const area = uni.getStorageSync('AREA_NAME')
+  // const area = uni.getStorageSync('AREA_NAME')
   data = {
-    area,
+    // area,
     ...data,
   }
   let result = data
