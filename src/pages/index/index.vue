@@ -14,6 +14,7 @@
         <view>内容</view>
       </view>
     </van-popup>
+    <uni-data-picker :localdata='[{text:"一年级",value:"1-0",children:[{text:"1.1班",value:"1-1"},{text:"1.2班",value:"1-2"}]},{text:"二年级",value:"2-0"},{text:"三年级",value:"3-0"}]' ></uni-data-picker>
   </view>
 </template>
 

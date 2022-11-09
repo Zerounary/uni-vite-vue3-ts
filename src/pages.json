@@ -89,5 +89,13 @@
       "van-uploader": "/wxcomponents/vant/uploader/index"
       // #endif
     }
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+      "^Base(.*)": "@/components/Base$1/index.vue",
+      "^Mix(.*)": "@/pageComponents/Mix$1/index.vue"
+    }
   }
 }
