@@ -50,6 +50,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3060420220922001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-3060420220922001",
     "@dcloudio/uni-ui": "^1.4.9",
+    "@types/wechat-miniprogram": "^3.4.1",
     "pinia": "^2.0.23",
     "vant": "^3.6.4",
     "vue": "^3.2.39",
