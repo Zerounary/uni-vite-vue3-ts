@@ -23,7 +23,7 @@ const resError = (res: any, msg = '响应发生错误') =>
       statusCode,
       data: { error = {} },
     } = res
-    if (statusCode >= 200 && statusCode < 500) {
+    if (statusCode == 200) {
       resolve(res)
       return
     }
