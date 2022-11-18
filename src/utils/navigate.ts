@@ -1,3 +1,5 @@
+import { objToQuerystring } from "./url"
+
 export const navigateMixinMethods = {
   /**
    * 跳转到至指定页面
@@ -18,4 +20,16 @@ export const navigateMixinMethods = {
       uni.redirectTo(opt)
     }
   },
+}
+
+export const $goto = navigateMixinMethods.$goto
+
+export const refresh = () => {
+  const pages = getCurrentPages()
+  const currentPage = pages.pop()
+  const currentPath = currentPage?.route || ''
+  const query = objToQuerystring(currentPage?.options || {})
+  uni.redirectTo({
+    url: `/${currentPath}?${query}`,
+  })
 }
