@@ -77,8 +77,8 @@ export const shareMixinMethods = {
     const currentPath = pages.pop()?.route || ''
     let shareMap = getShareMap()
     shareMap = {
-      [currentPath]: data,
       ...shareMap,
+      [currentPath]: data,
     }
     uni.setStorageSync(SHARE_MAP_NAME, shareMap)
   },
