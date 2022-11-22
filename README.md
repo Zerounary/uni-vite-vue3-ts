@@ -30,3 +30,11 @@ npm run dev:app-android
 ```shell
 npm run dev:mp-weixin
 ```
+# 使用 Iconfont 
+
+登录 [iconfont](https://www.iconfont.cn/) 选择图标后，下载至本地。 得到的是一个压缩包，将里面的 `iconfont.css` 和  `iconfont.ttf` 替换到 `src/static` 目录下。
+
+页面中类似使用如下方式引用
+```html
+    <view class="iconfont icon-bofang_huaban text-red-500"></view>
+```
