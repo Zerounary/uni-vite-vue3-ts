@@ -38,3 +38,5 @@ npm run dev:mp-weixin
 ```html
     <view class="iconfont icon-bofang_huaban text-red-500"></view>
 ```
+
+注意：观察下 `iconfont.css` 中引用的字体，可能不止 `iconfong.ttf` 一个
