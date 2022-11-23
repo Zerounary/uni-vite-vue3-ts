@@ -14,6 +14,7 @@ export const navigateMixinMethods = {
     }
     if (directTo) {
       uni.navigateTo(opt)
+      return
     }
     const currentPath = pages.pop()?.route || ''
     if (`/${currentPath}` !== opt.url) {
