@@ -12,6 +12,14 @@
           // #endif
         }
       }
+    },
+    {
+      "path": "pages/loading/index",
+      "style": {
+        "navigationBarTitleText": "",
+        "disableScroll": false,
+        "usingComponents": {}
+      }
     }
   ],
   "globalStyle": {

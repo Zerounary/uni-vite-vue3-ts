@@ -43,12 +43,12 @@ export const shareMixinRoot = {
    */
   onShareAppMessage() {
     const pages = getCurrentPages()
-    let currentPath = pages.pop()?.route || ''
+    let currentPath = pages.pop()?.$page.fullPath || ''
     const data = getShareData(currentPath)
     currentPath = currentPath.startsWith('/') ? currentPath : `/${currentPath}`
     console.log('onShareAppMessage..')
     return {
-      path: `/pages/loading/index?ch=py&path=${currentPath}&data=${data}`,
+      path: `/pages/loading/index?ch=py&path=${encodeURIComponent(currentPath)}&data=${data}`,
     }
   },
   /**
@@ -57,12 +57,12 @@ export const shareMixinRoot = {
    */
   onShareTimeline() {
     const pages = getCurrentPages()
-    let currentPath = pages.pop()?.route || ''
+    let currentPath = pages.pop()?.$page.fullPath || ''
     const data = getShareData(currentPath)
     currentPath = currentPath.startsWith('/') ? currentPath : `/${currentPath}`
     console.log('onShareTimeline..')
     return {
-      query: `ch=pyq&path=${currentPath}&data=${data}`,
+      query: `ch=pyq&path=${encodeURIComponent(currentPath)}&data=${data}`,
     }
   },
 }
@@ -74,7 +74,7 @@ export const shareMixinMethods = {
    */
   _setShareData(data: any) {
     const pages = getCurrentPages()
-    const currentPath = pages.pop()?.route || ''
+    const currentPath = pages.pop()?.$page.fullPath || ''
     let shareMap = getShareMap()
     shareMap = {
       ...shareMap,
@@ -90,7 +90,7 @@ export const shareMixinMethods = {
     if (query.ch) {
       if (query.ch === 'pyq') {
         const pages = getCurrentPages()
-        const currentPath = pages.pop()?.route || ''
+        const currentPath = pages.pop()?.$page.fullPath || ''
         uni.redirectTo({
           url: `/pages/loading/index?ch=pyq&path=${currentPath}&data=${query.data}`,
         })
