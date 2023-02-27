@@ -22,6 +22,20 @@
       }
     }
   ],
+  "subpackages": [
+    {
+      "root": "pagesCommon",
+      "pages": [
+        {
+          "path": "status/index",
+          "style": {
+            "navigationBarTitleText": "",
+            "usingComponents": {}
+          }
+        }
+      ]
+    }
+  ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
