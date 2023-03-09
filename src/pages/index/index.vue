@@ -26,9 +26,11 @@
 import { ref } from 'vue'
 import { useCounterStore } from '@/stores/counter'
 import { useApiStore } from '@/stores/api'
+import { usePersonStore } from '@/stores/person'
 
 import { version } from '~/package.json'
 const counter = useCounterStore()
+const person = usePersonStore()
 const api = useApiStore()
 const title = ref('Hello')
 

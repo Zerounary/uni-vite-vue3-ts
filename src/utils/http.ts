@@ -1,6 +1,7 @@
 /* eslint-disable require-atomic-updates */
 
 import { showLoading, hideLoading, showToast } from './interactions'
+import manifest from '../manifest.json'
 // import { querystringToObj } from '@/utils/url'
 const { VITE_BASE_URL } = import.meta.env
 
@@ -90,6 +91,7 @@ const REQ = async (
   const timestamp = Date.now()
   const headerToken = {
     'x-timestamp': timestamp,
+    appid: manifest['mp-weixin'].appid,
   }
   isShowLoading && showLoading()
   return new Promise((resolve, reject) => {
