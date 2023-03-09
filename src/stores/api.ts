@@ -8,7 +8,7 @@ export const useApiStore = defineStore('api', {
   actions: {
     login() {
       REQ({
-        url: '/api/geInfo',
+        url: '/api/getInfo',
         method: 'GET',
       })
     },

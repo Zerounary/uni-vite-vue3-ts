@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import uniStorage from '@/utils/uniStorage'
 import REQ from '@/utils/http'
 import { uniLogin } from '@/utils/mp-weixin'
 
@@ -93,5 +94,14 @@ export const usePersonStore = defineStore('person', {
         })
       })
     },
-  }
+  },
+  persist: {
+    enabled: true,
+    strategies: [
+      {
+        storage: uniStorage,
+        paths: ['token', 'userInfo'],
+      },
+    ],
+  },
 })

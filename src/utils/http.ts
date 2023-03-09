@@ -2,8 +2,11 @@
 
 import { showLoading, hideLoading, showToast } from './interactions'
 import manifest from '../manifest.json'
+import { usePersonStore } from '@/stores/person'
+import { refresh } from './navigate'
 // import { querystringToObj } from '@/utils/url'
 const { VITE_BASE_URL } = import.meta.env
+
 
 // 请求进入失败回调的函数，比如：域名校验不通过
 const reqError = (err: any, res: any, msg = '请求发生错误') =>
@@ -30,7 +33,10 @@ const resError = (res: any, msg = '响应发生错误') =>
     }
     // 请求响应 401 表示需要登录
     if (+res.statusCode === 401) {
-      console.log('TODO: 此处需补充逻辑')
+      const personStore = usePersonStore()
+      personStore.handleLogin().then(() => {
+        refresh();
+      })
       return
     }
     const { message = msg } = error
